@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="category.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body style="overflow-x: hidden;margin-left:20px;" >
+<form method="post">
+    {% csrf_token %}
+    <p><b>General Vegetables</b></p>
+    <div class="row">
+      <div class="col-xs-6"><input type="checkbox" name="Tomato">
+        <label><img src="{% static 'MyApp/media/Tomato.jpg'%}"><p>Tomato<br>
+        <button class="glyphicon glyphicon-plus" onclick="funUp(1)"></button>
+        <input type="number" value="1" name="tb" id="textbox1" step="0.5" min="0.5">
+        <button class="glyphicon glyphicon-minus" onclick="funDown(1)"></button><br>
+        <select name="vegetables"><option>Prices</option></select></p>
+      </label></div>
+      <div class="col-xs-6"><input type="checkbox" name="Tomato">
+        <label for="Okra"><img src="Pictures/Bendakaya.jfif"><p>Okra<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(2)"></button>
+          <input type="number" value="1" name="tb" id="textbox2" step="0.5" min="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(2)"></button><br>
+          <select name="vegetables"><option>Prices</option></select></p>
+        </label></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6"><input type="checkbox" name="Cabbage">
+        <label for="Cabbage"><img src="Pictures/Cabbage.jfif"><p>Cabbage<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(3)"></button>
+          <input type="number" value="1" id="textbox3" name="tb3" step="0.5" min="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(3)"></button><br>
+          <select name="vegetables3"><option>Prices</option></select></p>
+        </label></div>
+      <div class="col-xs-6"><input type="checkbox" name="Chikkudukaya">
+        <label for="Chikkudukaya"><img src="Pictures/Chikkudukaya.webp"><p>Chikkudukaya<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(4)"></button>
+          <input type="number" value="1" id="textbox4" name="tb4" step="0.5" min="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(4)"></button><br>
+          <select name="vegetables4"><option>Prices</option></select></p>
+        </label></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6"><input type="checkbox" name="Potato">
+        <label for="Potato"><img src="Pictures/Potato.jfif"><p>Potato<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(5)" min="0.5"></button>
+          <input type="number" value="1" id="textbox5" name="tb5" step="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(5)"></button><br>
+          <select name="vegetables5"><option>Prices</option></select></p>
+        </label></div>
+      <div class="col-xs-6"><input type="checkbox" name="Beans">
+        <label for="Beans"><img src="Pictures/Beans.jpg"><p>Beans<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(6)" min="0.5"></button>
+          <input type="number" value="1" id="textbox6" name="tb6" step="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(6)"></button><br>
+          <select name="vegetables6"><option>Prices</option></select></p>
+        </label></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6"><input type="checkbox" name="Brinjal"/>
+        <label for="Brinjal"><img src="Pictures/Brinjal.jfif"><p>Brinjal<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(7)"></button>
+          <input type="number" value="1" id="textbox7" name="tb7" step="0.5" min="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(7)"></button><br>
+          <select name="vegetables7"><option>Prices</option></select></p>
+        </label></div>
+      <div class="col-xs-6"><input type="checkbox" name="Dondakaya">
+        <label for="Dondakaya"><img src="Pictures/Dondakaya.jfif"><p>Dondakaya<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(8)"></button>
+          <input type="number" value="1" id="textbox8" name="tb8" step="0.5" min="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(8)"></button><br>
+          <select name="vegetables8"><option>Prices</option></select></p>
+        </label></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6"><input type="checkbox" name="Cauliflower">
+        <label for="Cauliflower"><img src="Pictures/Cauliflower.jfif"><p>Cauliflower<br>
+          <button class="glyphicon glyphicon-plus" onclick="funUp(9)" min="0.5"></button>
+          <input type="number" value="1" id="textbox9" name="tb9" step="0.5">
+          <button class="glyphicon glyphicon-minus" onclick="funDown(9)"></button><br>
+          <select name="vegetables9"><option>Prices</option></select></p>
+        </label></div>
+    </div>
+    <input type="submit" value="Add to Cart">
+    <label style="border: none;width:97%;font-size:45px;text-align:center;color:green;font-style:italic">-------Prakrutik Vinmay-------</label>
+    <script>
+      function fun()
+      {
+          document.getElementById('buttons').textContent="Added to cart"
+      }
+      function funUp(a)
+      {
+        let str="textbox"+a
+        document.getElementById(str).stepUp(1)
+      }
+      function funDown(a)
+      {
+        let str="textbox"+a
+        document.getElementById(str).stepDown(1)
+      }
+    </script>
+</form>
+</body>
+</html>
